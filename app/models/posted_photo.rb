@@ -1,0 +1,2 @@
+class PostedPhoto < ApplicationRecord
+end

@@ -1,0 +1,6 @@
+<%= render 'shared/logout_button' %>
+<h1>写真一覧</h1>
+<%= link_to "画像をアップロード", new_posted_photo_path %>
+<div>
+  <%= render partial: "posted_photo", collection: @posted_photos%>
+</div>

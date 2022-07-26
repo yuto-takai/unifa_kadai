@@ -1,0 +1,15 @@
+<%= render 'shared/logout_button' %>
+<h1>写真アップロード</h1>
+<%= form_for(@new_photo) do |f| %>
+  <div>
+    <%= f.label :title, "タイトル"%>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :image_url, "画像ファイル"%>
+    <%= f.file_field :image_url %>
+  </div>
+
+  <%= f.submit 'アップロード' %>
+  <%= link_to "キャンセル", posted_photos_path %>
+<% end %>
