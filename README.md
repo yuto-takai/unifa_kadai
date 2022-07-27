@@ -12,7 +12,7 @@ user_nameとpasswordは任意
 ```
 User.create(user_name: "test_user", password: "password", password_confirmation: "password")
 ```
-あとはbundle installとrails sだけすればOKかと思います。
+あとはbundle installとrails s、rake db:migrateだけすればOKかと思います。
 
 ## 補足
 - 拡張の想定等は不要とのことでしたので、ServiceやModuleに切り出さずにControllerに処理をまとめています
