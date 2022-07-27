@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_07_25_135803) do
 
   create_table "posted_photos", force: :cascade do |t|
     t.string "title", null: false
-    t.string "image_url", null: false
+    t.string "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

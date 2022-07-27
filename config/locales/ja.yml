@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      posted_photo:
+        title: タイトル
+        image: 画像ファイル
+    errors:
+      messages:
+        blank: "を入力してください"
+      models:
+        posted_photo:
+          too_long: "は30文字以内にしてください"

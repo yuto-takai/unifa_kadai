@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to posted_photos_path
     else
+      flash.now[:alert] = ['ユーザーIDを入力してください'] if params[:session][:user_name].blank?
+      flash.now[:alert] = ['パスワードを入力してください'] if params[:session][:password].blank?
+      flash.now[:alert] = ['ユーザーIDを入力してください', 'パスワードを入力してください'] if params[:session][:user_name].blank? && params[:session][:password].blank?
       render 'new'
     end
   end

@@ -1,4 +1,7 @@
 <div>
   <p><%= posted_photo.title %></p>
-  <%= image_tag "/posted_photos/#{posted_photo.image_url}" %>
+  <%= image_tag "/posted_photos/#{posted_photo.image}" %>
+  <%= if session[:access_token].present? %>
+    <%= button_to 'ツイートする', oauth_tweet_path(posted_photo: { title: posted_photo.title, image: posted_photo.image }), method: :post %>
+  <%= end %>
 </div>
