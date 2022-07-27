@@ -15,5 +15,4 @@ User.create(user_name: "test_user", password: "password", password_confirmation:
 あとはbundle installとrails s、rake db:migrateだけすればOKかと思います。
 
 ## 補足
-- 拡張の想定等は不要とのことでしたので、ServiceやModuleに切り出さずにControllerに処理をまとめています
 - client_secretなども、今回に限ってはベタ書きしているため、master.key等は不要かと思います
