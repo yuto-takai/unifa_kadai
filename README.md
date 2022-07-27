@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使い方
 
-Things you may want to cover:
+### rubyとrailsのバージョン
+ruby: 2.7.6
+rails: 6.1.6
 
-* Ruby version
+### ユーザーの作成
 
-* System dependencies
+user_nameとpasswordは任意
+```
+User.create(user_name: "test_user", password: "password", password_confirmation: "password")
+```
+あとはbundle installとrails sだけすればOKかと思います。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 補足
+- 拡張の想定等は不要とのことでしたので、ServiceやModuleに切り出さずにControllerに処理をまとめています
+- client_secretなども、今回に限ってはベタ書きしているため、master.key等は不要かと思います
