@@ -1,9 +1,8 @@
-require 'uri'
 class PostedPhotosController < ApplicationController
   before_action :login_check
 
   def index
-    @posted_photos = PostedPhoto.all.order(created_datetime: 'DESC')
+    @posted_photos = PostedPhoto.all.order(created_at: :DESC)
     @auth_req_url = auth_req_url
   end
 

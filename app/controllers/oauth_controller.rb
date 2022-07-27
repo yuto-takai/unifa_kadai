@@ -1,13 +1,10 @@
 class OauthController < ApplicationController
   def callback    
-    fetch_token_reqest
-    session[:access_token] = fetch_token_reqest
-
+    session[:access_token] = fetch_access_token
     redirect_to posted_photos_path
   end
 
-  def tweet
-
+  def post_tweet
     uri = URI.parse("https://arcane-ravine-29792.herokuapp.com/api/tweets")
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
@@ -19,22 +16,10 @@ class OauthController < ApplicationController
 
     request_body = {
       text: tweet_params[:title],
-      url: "http://localhost:3000#{tweet_params[:image]}"
+      url: "http://localhost:3000/#{tweet_params[:image]}"
     }.to_json
 
-    response = http.post(uri.path, request_body, headers)
-
-    
-
-
-
-    uri = URI('https://arcane-ravine-29792.herokuapp.com/api/tweets')
-
-    res = Net::HTTP.post_form(
-      uri,
-      body: request_body,
-    )
-    
+    http.post(uri.path, request_body, headers)
   end
 
   private

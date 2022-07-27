@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       flash.now[:alert] = ['ユーザーIDを入力してください'] if params[:session][:user_name].blank?
       flash.now[:alert] = ['パスワードを入力してください'] if params[:session][:password].blank?
       flash.now[:alert] = ['ユーザーIDを入力してください', 'パスワードを入力してください'] if params[:session][:user_name].blank? && params[:session][:password].blank?
+      flash.now[:alert] = ['ユーザーIDとパスワードが一致するユーザーが存在しません'] if user.nil?
       render 'new'
     end
   end

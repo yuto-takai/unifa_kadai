@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete 'sessions/destroy'
 
   get 'oauth/callback'
-  post 'oauth/tweet'
+  post 'oauth/post_tweet'
 
   resources :posted_photos, only: [:index, :new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
